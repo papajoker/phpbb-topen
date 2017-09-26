@@ -1,0 +1,43 @@
+{% include 'mcp_header.html' %}
+<style>
+    #top10 { margin:1em auto; font-size: 1.1em; }
+    #top10 td { padding:0.1em 1em; line-height:1.5em; }
+    #top10 .count { text-align:right; }
+    #top10 .name { min-width:7em; font-size: 1.2em; }
+    #top10 .posts { text-align: right; }
+    #top10 img { max-height:1.5em; }
+    #top10 tr { border-bottom:1px solid #fff; }
+</style>
+
+<h2>Top 10 &nbsp; {{ TOP_TITLE }}</h2>
+
+<div class="panel">
+	<div class="inner"><span class="corners-top"><span></span></span>
+
+	<div class="panel">
+		<div class="inner">
+			<table width="300" id="top10">
+                <!-- BEGIN tops -->
+                <tr>
+                    <td class="count" title="{{ lang('MSG') }}"><b>{{ tops.COUNT }}</b></td>
+                    <td class="name"><a href="{{ ROOT_PATH }}memberlist.php?mode=viewprofile&u={{ tops.ID }}">{{ tops.NAME }}</a></td>
+                    <th>{% if tops.AVATAR %}
+                        <img src="{{ ROOT_PATH }}download/file.php?avatar={{ tops.AVATAR }}"/>
+                        {% endif %}
+                    </th>
+                    <td class="posts" title="{{ lang('MSG_COUNT') }}">{{ tops.POSTS }}</td>
+                </tr>
+                <!-- END tops -->
+			</table>
+		</div>
+	</div>
+	
+    <form method="post" id="mcp" action="{U_POST_ACTION}">
+        <label>{{ lang('SELECT_MONTH') }}{L_COLON}</label>
+        <input name="ladate" type="date" {% if LADATE %}value="{{ LADATE }}"{% endif %}/>
+        {S_FORM_TOKEN}
+        <input type ="submit" class="button1"/>
+    </form>
+
+</div>
+{% include 'mcp_footer.html' %}
