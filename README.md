@@ -1,5 +1,7 @@
 # Topten PCM
 
+![alt screen](https://lut.im/noTCxdKh6Z/udgzvJYEdz3YMYtr.png)
+
 ## Installation
 
 Copy the extension to phpBB/ext/papajoke/topten
