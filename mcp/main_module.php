@@ -57,8 +57,8 @@ class main_module
             'TOP_TITLE'               => $title,
         ));
 
-        $sql="SELECT count(poster_id) as nb, phpbb_users.username_clean, poster_id, phpbb_users.user_posts, phpbb_users.user_avatar  FROM phpbb_posts 
-                LEFT JOIN phpbb_users ON phpbb_users.user_id=phpbb_posts.poster_id
+        $sql="SELECT count(poster_id) as nb, u.username_clean, poster_id, u.user_posts, u.user_avatar  FROM ".POSTS_TABLE." p
+                LEFT JOIN ".USERS_TABLE." u ON u.user_id=p.poster_id
             WHERE 
                 ". $condition ."
                 AND group_id<4 AND poster_id>1
