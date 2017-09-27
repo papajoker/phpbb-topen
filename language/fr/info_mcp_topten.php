@@ -19,6 +19,6 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'MCP_TOPTEN'				=> 'Hit parade des posteurs',
+	'MCP_TOPTEN'				=> 'Top 10 des posteurs',
 	'MCP_TOPTEN_TITLE'		=> 'Infos',
 ));
